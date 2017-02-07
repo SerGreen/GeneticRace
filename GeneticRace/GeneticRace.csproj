@@ -76,6 +76,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="saves\map_0.grm" />
+    <None Include="saves\map_1.grm" />
+    <None Include="saves\map_2.grm" />
+    <None Include="saves\map_3.grm" />
+    <None Include="saves\population_0.gen" />
+    <None Include="saves\population_1.gen" />
+    <None Include="saves\population_2.gen" />
+    <None Include="saves\population_3.gen" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeneticRaceLib\GeneticRaceLib.csproj">
@@ -84,6 +92,9 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy /Y "$(SolutionDir)GeneticRace\saves\*" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
